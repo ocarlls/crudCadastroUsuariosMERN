@@ -9,12 +9,16 @@ const UsuarioSchema = new mongoose.Schema({
     },
     login: {
         type: String,
-        require: true
+        require: false
     },
     email: {
         type: String,
         require: true
     },
+    senha: {
+        type: String,
+        require: true
+    }
 });
 
 //Definindo a collection "Database" que irá armazenar usuario

@@ -1,8 +1,10 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
+const cors = require('cors')
 
 app.use(express.json())
+app.use(cors())
 const UsuarioModel = require("./models/Usuario");
 //Conectando ao banco de dados Mongo
 mongoose.connect("mongodb+srv://ocarlls:03122020@crud.rzbzlye.mongodb.net/?retryWrites=true&w=majority", 
@@ -10,11 +12,12 @@ mongoose.connect("mongodb+srv://ocarlls:03122020@crud.rzbzlye.mongodb.net/?retry
     useNewUrlParser: true
 })
 
-app.get('/', async (req, res)=>{
+app.post("/insert", async (req, res)=>{
+    const email = req.body.email
+    const senha = req.body.password
     const usuario = new UsuarioModel({
-        nome: 'Carlos',
-        login: 'ocarlls',
-        email: 'carlin@gmail.com'
+        email: email,
+        senha: senha
     });
     try{
         await usuario.save();
