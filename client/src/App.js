@@ -1,14 +1,16 @@
 import { useState } from 'react';
 import './App.css';
 import Axios from 'axios';
+
 // No react temos uma função javascript que retorna html, esse HTML 
 // é exportados  para o index.js, onde é repassado para o id root
 // e renderizado.
 function App() {
   const[email, setEmail] = useState("")
   const[password, setPassword] = useState("")
+  const[nome, setNome] = useState("")
   const insereUsuario = () => {
-    Axios.post("http://localhost:3001/insert", {email: email, password: password})
+    Axios.post("http://localhost:3001/insert", {nome: nome, email: email, password: password})
   }
   return (
     <div className="App">
@@ -17,6 +19,10 @@ function App() {
           <div className='wrap-login'>
             <form className='form-login'>
               <span className='login-form-title'>Bem-Vindo!!</span>
+              <div className='wrap-input'>
+                <input className={nome !== "" ? 'has-val input' : 'input'} type='text' value={nome} onChange={e => setNome(e.target.value)}/>
+                <span className='focus-input' data-placeholder='Nome'></span>
+              </div>
               <div className='wrap-input'>
                 <input className={email !== "" ? 'has-val input' : 'input'} type='email' value={email} onChange={e => setEmail(e.target.value)}/>
                 <span className='focus-input' data-placeholder='Email'></span>
