@@ -16,11 +16,11 @@ function ListUsers(){
         <div className="ListUsers">
             <div className="container-users">
                 <h1>Lista De Usuários Cadastrados</h1>
-                {userList.map((val, key)=>{
+                <div className='wrap-nomes'>{userList.map((val, key)=>{
                      return (
-                        <div className='nomes'><h3>{val.nome}</h3></div>
-                     )
-                })}
+                        <h3 className='item-nome'>{val.nome}</h3>
+                     ) 
+                })}</div>
             </div>
         </div>
     );

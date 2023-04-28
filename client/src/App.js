@@ -42,10 +42,11 @@ function App() {
                 <a className='txt-sign-up-2' href='/insert'>Login</a>
               </div>
             </form>
-            <ListUsers/>
+            
           </div>
         </div>
       </div>
+      <ListUsers/>
     </div>
   );
 }

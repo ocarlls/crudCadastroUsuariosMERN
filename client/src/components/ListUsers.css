@@ -1,19 +1,31 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  .ListUsers {
+    background-color: #111;
   }
 
   .container-users {
     text-align: center;
-    width: 100%;
     margin: 0 auto;
     color: #fff;
+ 
+    width: 390px;
+    background-color: #333;
+    border-radius: 10px;
+  
+    overflow: hidden;
+    padding: 70px 50px;
+    box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.2);
   }
   
-  .nome{
-    padding-top: 50px;
+  .wrap-nomes{
+    padding-top: 20px;
     font-size: 14px;
     color: #adadad;
     line-height: 1.5;
+  }
+
+  .item-nome {
+    border-style: solid;
+    border-radius: 5px;
+    border-color: linear-gradient(to left, #21d4fd, #b721ff);
+    border-width: 1.2;
   }
