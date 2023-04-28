@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './App.css';
 import Axios from 'axios';
+import ListUsers from "./components/ListUsers";
 
 // No react temos uma função javascript que retorna html, esse HTML 
 // é exportados  para o index.js, onde é repassado para o id root
@@ -12,6 +13,8 @@ function App() {
   const insereUsuario = () => {
     Axios.post("http://localhost:3001/insert", {nome: nome, email: email, password: password})
   }
+  // tudo do componente react deve ser renderizado em uma div só, aqui foi tudo feito dentro
+  // da div App
   return (
     <div className="App">
       <div className='container'>
@@ -39,6 +42,7 @@ function App() {
                 <a className='txt-sign-up-2' href='/insert'>Login</a>
               </div>
             </form>
+            <ListUsers/>
           </div>
         </div>
       </div>
