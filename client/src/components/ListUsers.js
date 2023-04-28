@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Axios from 'axios';
 import "./ListUsers.css"
 function ListUsers(){
@@ -18,7 +18,13 @@ function ListUsers(){
                 <h1>Lista De Usuários Cadastrados</h1>
                 <div className='wrap-nomes'>{userList.map((val, key)=>{
                      return (
-                        <h3 className='item-nome'>{val.nome}</h3>
+                        <React.Fragment>
+                            <div className='item-user'>
+                            <h3>{val.nome}</h3>
+                            <h3>{val.email}</h3>
+                            </div>
+                        </React.Fragment>
+                        
                      ) 
                 })}</div>
             </div>
