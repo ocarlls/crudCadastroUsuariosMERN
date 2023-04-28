@@ -18,7 +18,7 @@ function ListUsers(){
                 <h1>Lista De Usuários Cadastrados</h1>
                 {userList.map((val, key)=>{
                      return (
-                        <h1>{val.nome}</h1>
+                        <div className='nomes'><h3>{val.nome}</h3></div>
                      )
                 })}
             </div>
