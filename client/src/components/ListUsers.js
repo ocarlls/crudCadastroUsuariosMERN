@@ -7,7 +7,7 @@ function ListUsers(){
     const [novoNome, setNovoNome] = useState("");
 
     useEffect(()=>{
-        Axios.get("http://localhost:3001/read").then((response)=>{
+        Axios.get("http://localhost:3001/").then((response)=>{
             setUserList(response.data)
         })
     }, [])
