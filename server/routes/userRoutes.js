@@ -24,10 +24,15 @@ router.post('/insert', async (req, res)=>{
 })
 
 router.put('/update', async (req, res)=>{
-    
+    const novoNome = req.body.novoNome;
+    await Usuario.findById(req.body.id, (err, updatedUser)=>{
+        updatedUser.nome = novoNome;
+        updatedUser.save();
+        res.send("Name Updated!");
+    })
 })
 
-router.delete('/update', async (req, res)=>{
+router.delete('/delete/:id', async (req, res)=>{
 
 })
 

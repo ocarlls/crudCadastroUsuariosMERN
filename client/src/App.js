@@ -21,10 +21,14 @@ function App() {
     setUsuario({...usuario, [name]: value});
   }
 
-  const cadastrar = ()=>{
-    Axios.post("http://localhost:3001/inserir", {
-      usuario
-    })
+  const cadastrar = async (event)=>{
+    event.preventDefault();
+    try {
+      await Axios.post("http://localhost:3001/insert", usuario)
+      alert("Usuário Adicionado Com Sucesso!!");
+    } catch (err) {
+      console.log(err)
+    }
   }
 
   return (
@@ -43,7 +47,7 @@ function App() {
                 <span className='focus-input' data-placeholder='Email'></span>
               </div>
               <div className='wrap-input'>
-                <input id='senha' type='text' name='senha' onChange={handleChange}/>
+                <input id='senha' type='password' name='senha' onChange={handleChange}/>
                 <span className='focus-input' data-placeholder='Password'></span>
               </div>
               <div className='container-login-form-btn'>
