@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+const mongoose = require('mongoose')
 
 // Definindo o model das informações de um usuario
 // a "tabela" que será criada
@@ -18,4 +18,5 @@ const UsuarioSchema = new mongoose.Schema({
 });
 
 //Definindo a collection "Database" que irá armazenar usuario
-export const Usuario = mongoose.model("UserInfos", UsuarioSchema)
+const Usuario = mongoose.model("UserInfos", UsuarioSchema)
+module.exports = Usuario
